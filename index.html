@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Invitation</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- google font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- font awesome links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- for the firebase implementation -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+        // Your Firebase configuration
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <main>
+        <div class="invitation-container">
+            <div class="info-section">
+                <img src="images/special-event.jpg" alt="Event Icon">
+                <h1>You're Invited!</h1>
+                <p>Join us for a special celebration</p>
+            </div>
+            <div class="details-section">
+                <div class="detail-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <p><strong>Date:</strong> March 10, 2025</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <p><strong>Time:</strong> 6:00 PM</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>Location:</strong> Brandsen 805, La Boca 1161 Buenos Aires Ciudad autónoma de Buenos Aires</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-tshirt"></i>
+                    <p><strong>Dress Code:</strong> Camiseta de Boca</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <p><strong>RSVP By:</strong> March 5, 2025</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>Special Instructions:</strong> Parking available at the venue. Bring a printed invitation.</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-user"></i>
+                    <p><strong>Hosted by:</strong> Roman Riquelme</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-user"></i>
+                    <p><strong>Chef:</strong> Chicho Serna</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <p><strong>Menu:</strong> Asado</p>
+                </div>
+            </div>
+            <form id="rsvp-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="contact">Phone or Social Media:</label>
+                <input type="text" id="contact" name="contact" required>
+                
+                <button type="submit">Confirm Attendance</button>
+            </form>
+        </div>
+        
+        <!-- Modal -->
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Thank you for confirming your attendance!</h2>
+                <p>We look forward to seeing you at the event.</p>
+            </div>
+        </div>
+
+        <!-- Notification Sound -->
+        <audio id="notification-sound" src="sound/level-up-2-199574.mp3" preload="auto"></audio>
+    </main>
+        
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+
